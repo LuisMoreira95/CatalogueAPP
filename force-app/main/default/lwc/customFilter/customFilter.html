@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Filter" icon-name="standard:filter">
+        <lightning-layout>
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-combobox
+                    name="brand"
+                    label="Brand"
+                    value={brand}
+                    placeholder="Filter by brand"
+                    options={brands}
+                    onchange={handleBrands} >
+                </lightning-combobox>
+                <lightning-combobox
+                    name="category"
+                    label="Category"
+                    value={category}
+                    placeholder="Filter by category"
+                    options={categories}
+                    onchange={handleCategories} >
+                </lightning-combobox>
+            </lightning-layout-item>
+        </lightning-layout>
+        <div class="slds-var-m-around_medium">
+        <lightning-button label="Search" variant="brand" onclick={search}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

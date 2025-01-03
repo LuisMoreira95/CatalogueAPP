@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Info" icon-name="action:info">
+        <div class="slds-text-color_success slds-text-heading_medium slds-text-align_center">
+            {productsInStock} Products In Stock.
+        </div>
+    </lightning-card>
+    <br>
+    <c-custom-filter onvaluetofilterevent={handleFiltering}></c-custom-filter>    
+    <br>
+    <lightning-card title="Products" icon-name="standard:product">
+        <template if:true={loaded}>
+             <lightning-layout>
+                <lightning-layout-item size="4" padding="around-small">
+                    <lightning-input type="Text" placeholder="Search By Title..." onkeyup={handleSearch}></lightning-input>
+                </lightning-layout-item>
+             </lightning-layout>
+             <div class="slds-var-m-around_medium">
+                 <c-custom-data-table key-field="id" data={filteredProducts} columns={columns} hide-checkbox-column="true"></c-custom-data-table>
+                </div>
+                <div if:false={noData} class="slds-text-heading_medium slds-text-align_center">
+                   No data found.
+               </div>
+            </template>
+        <template if:false={loaded}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>
