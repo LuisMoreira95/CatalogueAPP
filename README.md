@@ -7,7 +7,7 @@ Create a front-end using Lightning Web Components (LWC) that fetches and display
 -Objective: Create a Lightning web component to visualize the products:\
 The products are displayed in a LWC Data Table. 
 
--All data must be fetched from "https://dummyjson.com/":\
+-All data must be fetched from "https://dummyjson.com/" \
 Created an apex class named ProductController that consumes the API.
 
 -Data must be retrieved and stored in Salesforce\
